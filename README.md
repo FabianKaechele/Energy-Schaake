@@ -1,5 +1,5 @@
 # Energy-Schaake
-Python Functions used in the paper: "From point forecasts to multivariate probabilistic forecasts: The Schaake shuffle for day-ahead electricity price forecasting"
+Python functions used in the paper: "From point forecasts to multivariate probabilistic forecasts: The Schaake shuffle for day-ahead electricity price forecasting"
 by Oliver Grothe, Fabian Kächele & Fabian Krüger.
 
 ## Features
