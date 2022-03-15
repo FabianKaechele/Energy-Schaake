@@ -3,16 +3,16 @@ Python functions used in the paper: "From point forecasts to multivariate probab
 by Oliver Grothe, Fabian Kächele & Fabian Krüger.
 
 ## Features
-Calculate rank matrix from realized errors
-Calculate rank matrix from fitted parametric distribution 
-Create density(/ensemlbe)-forecast from a given point forecast, rankmatrix and historic errors with non-parametric margins
-Create density(/ensemlbe)-forecast from a given point forecast, rankmatrix and historic errors with parametric margins (t-/normal distribution)
+Calculate rank matrix from realized errors  
+Calculate rank matrix from fitted parametric distribution  
+Create density (/ensemlbe)-forecast from a given point forecast, rankmatrix and historic errors with non-parametric margins  
+Create density (/ensemlbe)-forecast from a given point forecast, rankmatrix and historic errors with parametric margins (t-/normal distribution)  
 
 
 ## Technologies
-Python version: 3.8
-Numpy version: 1.19.2
-Scipy verison: 1.6.0
+Python version: 3.8  
+Numpy version: 1.19.2  
+Scipy verison: 1.6.0  
 
 ## Usage
 
