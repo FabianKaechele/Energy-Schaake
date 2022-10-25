@@ -1,1 +1,1 @@
-from functions_energy_schaake import *
+from .functions_energy_schaake import *
