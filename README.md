@@ -1,11 +1,18 @@
-# The Schaake shuffle for day-ahead electricity price forecastin
-This repository contains the implementation of functions used in the paper: "From point forecasts to multivariate probabilistic forecasts: The Schaake shuffle for day-ahead electricity price forecasting"
+# The Schaake shuffle for day-ahead electricity price forecasting
+This repository contains the implementation of functions used in the [paper](https://arxiv.org/abs/2204.10154): 
+
+***From point forecasts to multivariate probabilistic forecasts: The Schaake shuffle for day-ahead electricity price forecasting***
+
+
 by Oliver Grothe, Fabian Kächele & Fabian Krüger.
 
 ## Technologies
-Python version: 3.8  
-Numpy version: 1.19.2  
-Scipy verison: 1.6.0  
+- Python 3.8  
+- R 4.0.3
+- Numpy 1.19.2  
+- Scipy 1.6.0  
+- rpy2 2.9.4
+
 
 ## Features
 - Create multivaraite density (/ensemble)-forecast from a series of given point forecasts and realizations
@@ -17,27 +24,28 @@ Scipy verison: 1.6.0
   -  from fitted parametric distribution  
 
 
-
 ## Usage
+#### Given data
+- ***errors***: Series of realized errors from the point forecasting model
+- ***y_pred***: 24 dimensional day-ahead point prediction for electricity price
+```python
+from EnergyShaake import *
 
-```
-import functions_Energy_Schaake as func
+# set parameters for forecast
+lenght_error_learning = 90
+length_dependence_learning = 90
+timeseries_treatment = True
+param_margin = False
+param_dependence = False
 
-## given
-errors: Series of realized errors from the point forecasting model
-Yp     - 24 dimensional day-ahead point prediction for electricity price 
-
-%sigma  - variance prediction for each hour (e.g. from time series model)
-%errordist_normed - realized, standardized errors for marginal distributions
-
-
-# non-parametric forecast ensemble
-rankmatrix=func.get_rankmatrix(errors,param=False)
-forecast=func.density_forecast_nonparam(Yp, sigma, _,rankmatrix,errordist_normed)
-
-# parametric forecast ensemble
-rankmatrix_parametric=func.get_rankmatrix(errors,param=True)
-forecast_parametric=func.density_forecast_param(Yp, sigma, _,rankmatrix_parametric,errordist_normed,dof=0)
+# get forecast of for next day
+forecast_density = learn_multivariate_density(y_pred, errors, timeseries_treatment, 
+                      lenght_error_learning, length_dependence_learning, 
+                        param_margin, param_dependence)
+                        
+# get only rank matrix of raw errors
+data_dependence = errors[-length_dependence_learning:, :].copy()
+rankmatrix = get_rankmatrix(errors,param_dependence):
 
 ```
 
