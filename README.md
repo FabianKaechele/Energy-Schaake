@@ -30,7 +30,7 @@ by Oliver Grothe, Fabian Kächele & Fabian Krüger.
 - ***errors***: Series of realized errors from the point forecasting model
 - ***y_pred***: 24 dimensional day-ahead point prediction for electricity price
 ```python
-from EnergyShaake import *
+from EnergySchaake import *
 
 # set parameters for forecast
 lenght_error_learning = 90
