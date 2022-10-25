@@ -12,6 +12,7 @@ by Oliver Grothe, Fabian Kächele & Fabian Krüger.
 - Numpy 1.19.2  
 - Scipy 1.6.0  
 - rpy2 2.9.4
+- rugarch (R package) 1.4-8
 
 
 ## Features
