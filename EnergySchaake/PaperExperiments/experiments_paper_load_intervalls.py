@@ -265,6 +265,8 @@ def main():
         # Update values
         forecast_learn_out = update_matrix(Yp - Y_echt, forecast_learn_out)
         forecast.loc[date, :] = Yp
+        forecast_easy = np.hstack((forecast_easy[1:], cost_echt))
+        forecast_easy_ranked = np.sort(forecast_easy, axis=None)
 
         # Print
         n += 1
